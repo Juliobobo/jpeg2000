@@ -1,0 +1,26 @@
+Welcome to Xilinx CORE Generator.
+Help system initialized.
+The IP Catalog has been reloaded.
+Opening project file
+/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/coregen/coregen.cgp.
+Recustomize and Generate (Under Original Project Settings)INFO:sim:172 - Generating IP...
+WARNING:coreutil - couldn't open
+   "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/coregen/tmp/_cg/_dbg/xil_484.o
+   ut": no such file or directory
+       while executing
+   "open ${outFileName} r"
+       (procedure "::xilinx::GeneratorUtils::readOutFile" line 17)
+       invoked from within
+   "::xilinx::GeneratorUtils::readOutFile $componentInstanceID $outFileName"
+       (procedure "main" line 40)
+       invoked from within
+   "main $argc $argv"
+       invoked from within
+   "return [main $argc $argv]"
+       (file
+   "/softl2/XILINX/ise_edk_147i/14.7/ISE_DS/ISE/coregen/repository/xilinx.com/ge
+   nerators/customization_generator_v1_0.tcl" line 58)ERROR:sim - Unable to evaluate Tcl file:
+   /softl2/XILINX/ise_edk_147i/14.7/ISE_DS/ISE/coregen/repository/xilinx.com/gen
+   erators/customization_generator_v1_0.tcl
+ERROR:sim - Failed executing Tcl generator.
+Closed project file.

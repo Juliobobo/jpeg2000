@@ -1,0 +1,4 @@
+mgc_hls "/tp/xph3sle/xph3sle512/ProjetSLE/Catapult/Main_Trans_Ond_Opt.v2/rtl_funcs.vhd" -2002
+work "/tp/xph3sle/xph3sle512/ProjetSLE/Catapult/Main_Trans_Ond_Opt.v2/rtl_mux_pkg.vhdl" -2002
+mgc_hls "/tp/xph3sle/xph3sle512/ProjetSLE/Catapult/Main_Trans_Ond_Opt.v2/rtl_mgc_ioport.vhd" -2002
+work "/tp/xph3sle/xph3sle512/ProjetSLE/Catapult/Main_Trans_Ond_Opt.v2/rtl.vhdl" -2002

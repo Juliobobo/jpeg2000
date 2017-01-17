@@ -1,0 +1,238 @@
+//  Precision RTL Synthesis 2014a.1_64-bit (Production Release) Mon Feb 24 02:39:08 PST 2014
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2014, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux xph3sle512@cimeld16 #1 SMP Debian 3.2.68-1+deb7u3 3.2.0-4-amd64 x86_64
+//  
+//  Start time Tue Dec 13 10:28:42 2016
+
+-- Device: Xilinx - ARTIX-7 : 7A100TCSG324 : 1
+-- CTE report summary..
+-- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+
+================================================================================================
+                   Clock Frequency Report
+
+	Domain                  Clock Name                            Min Period (Freq)             Required Period (Freq)
+	------                  ----------                            -----------------             ----------------------
+	clk                     clk                                   7.652 (130.685 MHz)           41.670 (23.998 MHz)
+
+
+================================================================================================
+Setup Timing Analysis of clk
+
+Setup Slack Path Summary
+
+               Data                                                                                                                                                                Data
+       Setup   Path   Source  Dest.                                                                                                                                                End 
+Index  Slack   Delay  Clock   Clock                                   Data Start Pin                                                          Data End Pin                         Edge
+-----  ------  -----  ------  -----  ---------------------------------------------------------------------------------  ---------------------------------------------------------  ----
+  1    34.018  7.636  clk     clk    Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/reg_state_var(21)/C  Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  2    34.474  7.180  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_Trans_Ond_1_y_1_sva(0)/C                          Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  3    34.513  7.141  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_hi_7_sg2_sva/C                                    Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  4    34.570  7.084  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_Trans_Ond_x_1_sva(6)/C                            Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  5    34.579  7.075  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_Trans_Ond_1_y_1_sva(1)/C                          Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  6    34.599  7.055  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_hi_7_sg3_sva/C                                    Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  7    34.626  7.028  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_hi_7_sg1_sva/C                                    Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  8    34.626  7.028  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_Trans_Ond_1_x_1_sva(5)/C                          Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+  9    34.661  6.993  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_Trans_Ond_1_y_1_sva(2)/C                          Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+ 10    34.679  6.975  clk     clk    Main_Trans_Ond_Opt_core_inst/reg_hi_7_sg4_sva/C                                    Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D  Rise
+
+                  CTE Path Report
+
+
+Critical path #1, (path slack = 34.018):
+
+SOURCE CLOCK: name: clk period: 41.670000
+     Times are relative to the 1st rising edge
+  DEST CLOCK: name: clk period: 41.670000
+     Times are relative to the 2nd rising edge
+
+NAME                                                                                 GATE      DELAY    ARRIVAL DIR  FANOUT
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/reg_state_var(21)/C FDRE                  0.000   up
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/reg_state_var(21)/Q FDRE        0.478     0.478   up
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/fsm_output(21)      (net)       1.114                  88
+Main_Trans_Ond_Opt_core_inst/ix39517z1918/I0                                      LUT5                  1.592   up
+Main_Trans_Ond_Opt_core_inst/ix39517z1918/O                                       LUT5        0.124     1.716   up
+Main_Trans_Ond_Opt_core_inst/nx39517z9                                            (net)       0.506                  12
+Main_Trans_Ond_Opt_core_inst/ix50040z1316/I2                                      LUT6                  2.222   up
+Main_Trans_Ond_Opt_core_inst/ix50040z1316/O                                       LUT6        0.124     2.346   dn
+Main_Trans_Ond_Opt_core_inst/nx50040z4                                            (net)       0.401                   7
+Main_Trans_Ond_Opt_core_inst/ix50039z43641/I2                                     LUT6                  2.747   dn
+Main_Trans_Ond_Opt_core_inst/ix50039z43641/O                                      LUT6        0.124     2.871   up
+Main_Trans_Ond_Opt_core_inst/nx50039z4                                            (net)       0.401                   7
+Main_Trans_Ond_Opt_core_inst/ix39523z1526/I0                                      LUT3                  3.272   up
+Main_Trans_Ond_Opt_core_inst/ix39523z1526/O                                       LUT3        0.124     3.396   dn
+Main_Trans_Ond_Opt_core_inst/nx39523z1                                            (net)       0.333                   1
+Main_Trans_Ond_Opt_core_inst/muxcy_0_7/DI                                         MUXCY                 3.729   dn
+Main_Trans_Ond_Opt_core_inst/muxcy_0_7/O                                          MUXCY       0.184     3.913   dn
+Main_Trans_Ond_Opt_core_inst/nx50037z1                                            (net)       0.000                   2
+Main_Trans_Ond_Opt_core_inst/xorcy_0_8/CI                                         XORCY                 3.913   dn
+Main_Trans_Ond_Opt_core_inst/xorcy_0_8/O                                          XORCY       0.510     4.423   up
+Main_Trans_Ond_Opt_core_inst/nx12188z31                                           (net)       0.333                   1
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/ix15458z1392/I1     LUT3                  4.756   up
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/ix15458z1392/O      LUT3        0.124     4.880   up
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/nx15458z1           (net)       0.335                   2
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/ix11746z29166/I1    LUT6                  5.215   up
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/ix11746z29166/O     LUT6        0.124     5.339   up
+Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst/nx11746z1           (net)       0.000                   2
+Main_Trans_Ond_Opt_core_inst/z_out_2_add8_21_muxcy_6/S                            MUXCY                 5.339   up
+Main_Trans_Ond_Opt_core_inst/z_out_2_add8_21_muxcy_6/O                            MUXCY       0.472     5.811   up
+Main_Trans_Ond_Opt_core_inst/nx15577z1                                            (net)       0.000                   2
+Main_Trans_Ond_Opt_core_inst/z_out_2_add8_21_xorcy_7/CI                           XORCY                 5.811   up
+Main_Trans_Ond_Opt_core_inst/z_out_2_add8_21_xorcy_7/O                            XORCY       0.510     6.321   up
+Main_Trans_Ond_Opt_core_inst/z_out_2(7)                                           (net)       0.000                   6
+Main_Trans_Ond_Opt_core_inst/passe_y_acc_13_itm_add17_7i1_muxcy_15/S              MUXCY                 6.321   up
+Main_Trans_Ond_Opt_core_inst/passe_y_acc_13_itm_add17_7i1_muxcy_15/O              MUXCY       0.472     6.793   up
+Main_Trans_Ond_Opt_core_inst/nx8788z1                                             (net)       0.000                   1
+Main_Trans_Ond_Opt_core_inst/passe_y_acc_13_itm_add17_7i1_xorcy_16/CI             XORCY                 6.793   up
+Main_Trans_Ond_Opt_core_inst/passe_y_acc_13_itm_add17_7i1_xorcy_16/O              XORCY       0.510     7.303   up
+Main_Trans_Ond_Opt_core_inst/passe_y_acc_13_itm_7n1s2(16)                         (net)       0.333                   1
+Main_Trans_Ond_Opt_core_inst/reg_passe_y_acc_13_itm(16)/D                         FDRE                  7.636   up
+
+		Initial edge separation:     41.670
+		Source clock delay:      -    0.000
+		Dest clock delay:        +    0.000
+		                        -----------
+		Edge separation:             41.670
+		Setup constraint:        -    0.016
+		                        -----------
+		Data required time:          41.654
+		Data arrival time:       -    7.636   ( 50.81% cell delay, 49.19% net delay )
+		                        -----------
+		Slack:                       34.018
+
+
+
+================================================================================================
+                   Input Delay Report
+
+	Input                  Clock Name                            Slack (ns)
+	-----                  ----------                            ----------
+	Src_rsc_singleport_data_out(0) clk                                   37.165
+	Dst_rsc_singleport_data_out(0) clk                                   37.165
+	Src_rsc_singleport_data_out(1) clk                                   37.194
+	Dst_rsc_singleport_data_out(1) clk                                   37.194
+	Src_rsc_singleport_data_out(2) clk                                   37.223
+	Dst_rsc_singleport_data_out(2) clk                                   37.223
+	Src_rsc_singleport_data_out(3) clk                                   37.252
+	Dst_rsc_singleport_data_out(3) clk                                   37.252
+	Src_rsc_singleport_data_out(4) clk                                   37.281
+	Dst_rsc_singleport_data_out(4) clk                                   37.281
+	Src_rsc_singleport_data_out(5) clk                                   37.310
+	Dst_rsc_singleport_data_out(5) clk                                   37.310
+	Src_rsc_singleport_data_out(6) clk                                   37.339
+	Dst_rsc_singleport_data_out(6) clk                                   37.339
+	Src_rsc_singleport_data_out(7) clk                                   37.368
+	Dst_rsc_singleport_data_out(7) clk                                   37.368
+	start                  clk                                   39.104
+	rst                    clk                                   41.197
+	nbLevels_rsc_z(2)      clk                                   41.654
+	nbLevels_rsc_z(1)      clk                                   41.654
+	nbLevels_rsc_z(0)      clk                                   41.654
+	clk                    clk                                   ------
+	Vga_rsc_singleport_data_out(7) clk                                   ------
+	Vga_rsc_singleport_data_out(6) clk                                   ------
+	Vga_rsc_singleport_data_out(5) clk                                   ------
+	Vga_rsc_singleport_data_out(4) clk                                   ------
+	Vga_rsc_singleport_data_out(3) clk                                   ------
+	Vga_rsc_singleport_data_out(2) clk                                   ------
+	Vga_rsc_singleport_data_out(1) clk                                   ------
+	Vga_rsc_singleport_data_out(0) clk                                   ------
+
+
+================================================================================================
+                   Output Delay Report
+
+	Output                 Clock Name                            Slack (ns)
+	------                 ----------                            ----------
+	Src_rsc_singleport_addr(15) clk                                   35.450
+	Dst_rsc_singleport_data_in(6) clk                                   35.933
+	Src_rsc_singleport_addr(14) clk                                   35.936
+	Dst_rsc_singleport_data_in(5) clk                                   35.962
+	Dst_rsc_singleport_data_in(4) clk                                   35.991
+	Dst_rsc_singleport_data_in(3) clk                                   36.020
+	Dst_rsc_singleport_data_in(2) clk                                   36.049
+	Dst_rsc_singleport_data_in(1) clk                                   36.078
+	Dst_rsc_singleport_data_in(0) clk                                   36.107
+	Dst_rsc_singleport_addr(15) clk                                   36.170
+	Src_rsc_singleport_addr(13) clk                                   36.187
+	Dst_rsc_singleport_addr(14) clk                                   36.199
+	Src_rsc_singleport_addr(12) clk                                   36.216
+	Dst_rsc_singleport_addr(13) clk                                   36.228
+	Src_rsc_singleport_addr(11) clk                                   36.245
+	Dst_rsc_singleport_addr(12) clk                                   36.257
+	Dst_rsc_singleport_addr(11) clk                                   36.286
+	Src_rsc_singleport_addr(16) clk                                   36.388
+	Src_rsc_singleport_data_in(6) clk                                   36.390
+	Dst_rsc_singleport_data_in(7) clk                                   36.414
+	Src_rsc_singleport_data_in(5) clk                                   36.419
+	Src_rsc_singleport_data_in(4) clk                                   36.448
+	Src_rsc_singleport_data_in(3) clk                                   36.477
+	Src_rsc_singleport_data_in(2) clk                                   36.506
+	Src_rsc_singleport_addr(10) clk                                   36.527
+	Dst_rsc_singleport_addr(10) clk                                   36.527
+	Src_rsc_singleport_data_in(1) clk                                   36.535
+	Src_rsc_singleport_data_in(0) clk                                   36.564
+	Dst_rsc_singleport_addr(16) clk                                   36.651
+	Src_rsc_singleport_data_in(7) clk                                   36.871
+	Src_rsc_singleport_addr(9) clk                                   36.982
+	Dst_rsc_singleport_addr(9) clk                                   37.029
+	Src_rsc_singleport_addr(8) clk                                   37.416
+	Dst_rsc_singleport_addr(8) clk                                   37.867
+	Dst_rsc_singleport_addr(7) clk                                   38.468
+	Src_rsc_singleport_re  clk                                   38.895
+	Src_rsc_singleport_we  clk                                   38.895
+	Dst_rsc_singleport_re  clk                                   38.895
+	Dst_rsc_singleport_we  clk                                   38.895
+	Vga_rsc_singleport_we  clk                                   38.895
+	Src_rsc_singleport_addr(7) clk                                   38.933
+	Src_rsc_singleport_addr(6) clk                                   39.011
+	Dst_rsc_singleport_addr(6) clk                                   39.011
+	Src_rsc_singleport_addr(0) clk                                   39.019
+	Dst_rsc_singleport_addr(0) clk                                   39.040
+	Src_rsc_singleport_addr(2) clk                                   39.375
+	Src_rsc_singleport_addr(1) clk                                   39.375
+	Src_rsc_singleport_addr(3) clk                                   39.476
+	Src_rsc_singleport_addr(5) clk                                   39.497
+	Src_rsc_singleport_addr(4) clk                                   39.497
+	Dst_rsc_singleport_addr(5) clk                                   39.497
+	Dst_rsc_singleport_addr(4) clk                                   39.497
+	Dst_rsc_singleport_addr(3) clk                                   39.497
+	Dst_rsc_singleport_addr(2) clk                                   39.497
+	Dst_rsc_singleport_addr(1) clk                                   39.497
+	done                   clk                                   40.714
+	nbLevels_triosy_lz     clk                                   40.714
+	Src_triosy_lz          clk                                   40.714
+	Dst_triosy_lz          clk                                   40.714
+	Vga_triosy_lz          clk                                   40.714
+	Vga_rsc_singleport_addr(0) clk                                   40.851
+	Vga_rsc_singleport_addr(5) clk                                   40.857
+	Vga_rsc_singleport_addr(4) clk                                   40.857
+	Vga_rsc_singleport_addr(3) clk                                   40.857
+	Vga_rsc_singleport_addr(2) clk                                   40.857
+	Vga_rsc_singleport_addr(1) clk                                   40.857
+	Vga_rsc_singleport_addr(16) clk                                   40.859
+	Vga_rsc_singleport_addr(15) clk                                   40.859
+	Vga_rsc_singleport_addr(14) clk                                   40.859
+	Vga_rsc_singleport_addr(13) clk                                   40.859
+	Vga_rsc_singleport_addr(12) clk                                   40.859
+	Vga_rsc_singleport_addr(11) clk                                   40.859
+	Vga_rsc_singleport_addr(10) clk                                   40.859
+	Vga_rsc_singleport_addr(9) clk                                   40.859
+	Vga_rsc_singleport_addr(8) clk                                   40.859
+	Vga_rsc_singleport_addr(7) clk                                   40.859
+	Vga_rsc_singleport_addr(6) clk                                   40.859
+	Vga_rsc_singleport_data_in(7) clk                                   41.670
+	Vga_rsc_singleport_data_in(6) clk                                   41.670
+	Vga_rsc_singleport_data_in(5) clk                                   41.670
+	Vga_rsc_singleport_data_in(4) clk                                   41.670
+	Vga_rsc_singleport_data_in(3) clk                                   41.670
+	Vga_rsc_singleport_data_in(2) clk                                   41.670
+	Vga_rsc_singleport_data_in(1) clk                                   41.670
+	Vga_rsc_singleport_data_in(0) clk                                   41.670
+	Vga_rsc_singleport_re  clk                                   ------
