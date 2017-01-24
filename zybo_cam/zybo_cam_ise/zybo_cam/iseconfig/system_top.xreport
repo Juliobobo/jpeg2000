@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-01-10T10:26:05</DateModified>
+  <DateModified>2017-01-24T18:15:10</DateModified>
   <ModuleName>system_top</ModuleName>
-  <SummaryTimeStamp>2016-12-13T12:01:00</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-01-24T18:06:37</SummaryTimeStamp>
   <SavedFilePath>/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/zybo_cam_ise/zybo_cam/iseconfig/system_top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/zybo_cam_ise/zybo_cam/</ImplementationReportsDirectory>
   <DateInitialized>2016-02-01T18:09:43</DateInitialized>

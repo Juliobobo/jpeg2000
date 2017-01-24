@@ -5,7 +5,7 @@ Loading device for application Rf_Device from file '7z010.nph' in environment
    "system_top" is an NCD, version 3.2, device xc7z010, package clg400, speed -3
 Opened constraints file system_top.pcf.
 
-Tue Dec 13 12:13:51 2016
+Tue Jan 24 18:05:19 2017
 
 /softl2/XILINX/ise_edk_147i/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g Binary:no -g CRC:Enable -g ProgPin:PullUp -g InitPin:Pullup -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g Disable_JTAG:No -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g OverTempPowerDown:Disable -g USR_ACCESS:None -g JTAG_XADC:Enable -g DCIUpdateMode:AsRequired -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g Match_cycle:Auto -g Security:None -g ICAP_select:Auto -g DonePipe:Yes -g DriveDone:No system_top.ncd 
 
@@ -95,15 +95,29 @@ There were 0 CONFIG constraint(s) processed from system_top.pcf.
 
 
 Running DRC.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net GND_8_o_GND_8_o_MUX_35_o is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net nbLev_sig_0_G is sourced by
-   a combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:367 - The signal <switch_io<2>_IBUF> is incomplete. The
+WARNING:PhysDesignRules:367 - The signal <CAMERA_VS_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
-DRC detected 0 errors and 3 warnings.  Please see the previously displayed
+WARNING:PhysDesignRules:367 - The signal <CAMERA_HS_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<1>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<2>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<3>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<4>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<0>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<5>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<6>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <CAMERA_DATA<7>_IBUF> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <switch_io<1>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+DRC detected 0 errors and 11 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 INFO:Security:67 - XILINXD_LICENSE_FILE is set to '2110@cimekey1' in
 /tp/xph3sle/xph3sle512/.flexlmrc.
@@ -117,9 +131,9 @@ WARNING:Security:44 - Since no license file was found,
        please run the Xilinx License Configuration Manager
        (xlcm or "Manage Xilinx Licenses")
        to assist in obtaining a license.
-WARNING:Security:42 - Your license support version '2016.12' for ISE expires in
-18 days after which you will not qualify for Xilinx software updates or new
-releases.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
 
 Creating bit map...
 Saving bit stream in "system_top.bit".

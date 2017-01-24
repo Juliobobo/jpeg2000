@@ -132,7 +132,7 @@ end component Camera_Capture;
 
 component mem_lum_opt
 	 Port ( clka : in STD_LOGIC;
-			wea : in STD_LOGIC_VECTOR(0 DOWNTO 0);
+		wea : in STD_LOGIC_VECTOR(0 DOWNTO 0);
     		addra : in STD_LOGIC_VECTOR(16 DOWNTO 0);
     		dina : in STD_LOGIC_VECTOR(7 DOWNTO 0);
     		clkb : in STD_LOGIC;
@@ -190,15 +190,15 @@ end component Main_Trans_Ond_Opt;
 --Ajout Ram_init
 component ram_init is
   PORT (
-    clka : IN STD_LOGIC;
-     ena : IN STD_LOGIC;  
- wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    clkb : IN STD_LOGIC;
-    enb : IN STD_LOGIC;  
-  addrb : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
-    doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	clka : IN STD_LOGIC;
+	ena : IN STD_LOGIC;  
+	wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    	addra : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    	dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    	clkb : IN STD_LOGIC;
+    	enb : IN STD_LOGIC;  
+  	addrb : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    	doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 end component ram_init;
 
@@ -227,8 +227,10 @@ signal addr_1_catC, addr_2_catC, addr_3_catC : STD_LOGIC_VECTOR (16 downto 0);
 
 -- Added for iteration
 signal cam_writting : STD_LOGIC_VECTOR(0 downto 0);
-type FSM_type is (WaitingForFrame, ReadingFrame, Treating, Synchronizing);
-signal etat_q, etat_d : FSM_type;
+--type FSM_with_cam is (WaitingForFrame, ReadingFrame, Treating, Synchronizing);
+type FSM_without_cam is (WaitingWC, TreatingWC);
+--signal etat_cam_q, etat_cam_d : FSM_with_cam;
+signal etat_q, etat_d : FSM_without_cam;
 
 -- Added for control of saturation
 signal saturate_sig : STD_LOGIC;
@@ -236,6 +238,8 @@ signal saturate_sig : STD_LOGIC;
 -- Added for control of the level of compression
 signal nbLev_sig_q, nbLev_sig_d : STD_LOGIC_VECTOR (2 DOWNTO 0);
 signal pushed_q, pushed_d : BOOLEAN;
+type FSM_compression is (rst, switch_1, switch_2, switch_3);
+signal etat_comp_q, etat_comp_d : FSM_compression;
 
 begin
 
@@ -250,7 +254,7 @@ begin
 	saturate_sig <= switch_io(3);
 	
 	-- This process is used to freeze the picture while observing the screen
-	freeze: process(switch_io)
+	freeze: process(switch_io, not_we_3)
 	begin
 		if switch_io(2) = '1'
 		then
@@ -269,115 +273,190 @@ begin
 	end process;
 	
 	-- fsm for level of compression
-	sync_nbLev: process(clk)
+	sync_nbLev: process(clk_VGA)
 	begin
-		if clk'event and clk = '1' then
-			nbLev_sig_q <= nbLev_sig_d;
-			pushed_q <= pushed_d;		
+		if clk_VGA'event and clk_VGA = '1' then
+			if rst_VGA = '1' then
+				etat_comp_q <= rst;
+				nbLev_sig_q <= "000";
+				
+			else
+				etat_comp_q <= etat_comp_d;
+				nbLev_sig_q <= nbLev_sig_d;		
+			end if;
 		end if;
 	end process;
 	
-	comb_nbLev: process(switch_io, push_io, rst_VGA)
+	comb_nbLev: process(etat_comp_q, nbLev_sig_q, switch_io, push_io)
+	
+	variable compteur : integer := 0;	
+
 	begin
 		--Default
 		nbLev_sig_d <= nbLev_sig_q;
-		pushed_d <= pushed_q;
+		etat_comp_d <= etat_comp_q;
 
-		case nbLev_sig_q is
+		case etat_comp_q is
+			when rst =>
+
+				nbLev_sig_d <= "000";
+
+				if push_io(0) = '1' then
+					etat_comp_d <= switch_1;
+				end if;
+
+			when switch_1 =>
+
+				if push_io(0) = '0' then
+					etat_comp_d <= switch_2;
+				end if;
+
+			when switch_2 =>
+				
+				nbLev_sig_d <= nbLev_sig_q + 1;
+				
+				if nbLev_sig_q = 7 then
+					etat_comp_d <= rst;
+				end if;
 			
+				etat_comp_d <= switch_3;
+
+			when switch_3 =>
+					
+				if push_io(0) = '1' then
+					etat_comp_d <= switch_1;
+				end if;
+
 		end case;	
 	end process;
 	--
 	-- We use the buttons of the zybo card to change the level of compression
-	sync_nbLev: process(switch_io, push_io, rst_VGA, pushed)
+	--sync_nbLev: process(switch_io, push_io, rst_VGA, pushed)
+	--begin
+	--	if rst_VGA = '1' then
+	--		nbLev_sig <= "000";
+	--		pushed <= false;
+	--	elsif switch_io(1) = '0' then
+	--		nbLev_sig <= "001";
+	--		pushed <= false;
+	--	elsif push_io(0) = '1' and pushed = false then
+	--		nbLev_sig <= nbLev_sig + 1;
+	--		pushed <= true;
+	--	elsif push_io(0) = '1' and pushed = true then
+	--		nbLev_sig <= nbLev_sig;
+	--		pushed <= true;
+	--	elsif push_io(0) = '0' then
+	--		nbLev_sig <= nbLev_sig;
+	--		pushed <= false;
+	--	end if;
+	--end process;
+
+
+	sync_fsm: process(clk_VGA)
 	begin
-		if rst_VGA = '1' then
-			nbLev_sig <= "000";
-			pushed <= false;
-		elsif switch_io(1) = '0' then
-			nbLev_sig <= "001";
-			pushed <= false;
-		elsif push_io(0) = '1' and pushed = false then
-			nbLev_sig <= nbLev_sig + 1;
-			pushed <= true;
-		elsif push_io(0) = '1' and pushed = true then
-			nbLev_sig <= nbLev_sig;
-			pushed <= true;
-		elsif push_io(0) = '0' then
-			nbLev_sig <= nbLev_sig;
-			pushed <= false;
+		if clk_VGA'event and clk_VGA = '1' then
+			if rst_VGA = '1' then
+				etat_q <= WaitingWC;
+			else
+				etat_q <= etat_d;
+			end if;
 		end if;
 	end process;
 
-	sync_fsm: process(CAMERA_PCLK, rst_VGA)
-	begin
-		if rst_VGA = '1' then
-			etat_q <= WaitingForFrame;
-		elsif rising_edge(CAMERA_PCLK) then
-			etat_q <= etat_d;
-		end if;
-	end process;
+	fsm: process(etat_q, done_signal, dina_1_catC, we, not_we_1, addr_1_catC)
 	
-	-- This fsm is used to coordinate the entries plugged on the ram1 and the
-	-- launch/stop of the CatapultC "Main_tran_ond_Opt" module.
-	fsm: process(etat_q, done_signal, cam_writting, dina_1_catC, data_cam, 
-						we, not_we_1, addr_1_catC, address_cam)
 	begin
-		
 		etat_d <= etat_q;
-
-		case etat_q is
-			when WaitingForFrame => -- Attente d'une nouvelle image à traiter.
-				start_signal <= '0';
-				dina_1 <= dina_1_catC;
-				we_1(0) <= not not_we_1;
-				addra_1 <= addr_1_catC;
-
-				if cam_writting = "1" then	
-					etat_d <= ReadingFrame;
-				end if;
-
-			when ReadingFrame => -- Ecriture d'une nouvelle image à traiter dans ram1.
-				start_signal <= '0';
-				--dina_1 <= rgb2lum(data_cam);
-				dina_1 <= (( "000" & data_cam(15 downto 11)) +
-						data_cam(10 downto 5) +
-						data_cam(4 downto 0));
-				we_1 <= we;
-				addra_1 <= address_cam;
-
-				if cam_writting = "0" then
-					etat_d <= Treating;
-				end if;
+		dina_1 <= dina_1_catC;
+		we_1(0) <= not not_we_1;
+		addra_1 <= addr_1_catC;
 			
-			when Treating => -- La transformée en ondelettes est en cours.
-					 -- Le traitement se passe entre ram1 et ram2.
-					 -- Le résultat final est écrit dans ram3.
-				start_signal <= '1';
-				dina_1 <= dina_1_catC;
-				we_1(0) <= not not_we_1;
-				addra_1 <= addr_1_catC;
-
-				if done_signal = '1' then
-					etat_d <= Synchronizing;
-				end if;
-
-			when Synchronizing => -- Au cas où Camera_Capture est en train d'écrire une image,
-					      -- on attend qu'il termine.
+		case etat_q is
+			when WaitingWC =>
 				start_signal <= '0';
-				dina_1 <= dina_1_catC;
-				we_1(0) <= not not_we_1;
-				addra_1 <= addr_1_catC;
+				if done_signal = '0' then
+					etat_d <= TreatingWC;
+				end if; 
 
-				if cam_writting = "0" then
-					etat_d <= WaitingForFrame;
+			when TreatingWC =>
+				start_signal <= '1';
+				if done_signal = '1' then
+					etat_d <= WaitingWC;
 				end if;
-
-
 		end case;
 	end process;
 
+--fsm_cam: if false generate 
+--		sync_fsm: process(clk_VGA)
+--		begin
+--			if clk_VGA'event and clk_VGA = '1' then
+--				if rst_VGA = '1' then
+--					etat_cam_q <= WaitingForFrame;
+--				else
+--					etat_cam_q <= etat_cam_d;
+--				end if;
+--			end if;
+--		end process;
 
+		-- This fsm is used to coordinate the entries plugged on the ram1 and the
+		-- launch/stop of the CatapultC "Main_tran_ond_Opt" module.
+--		fsm: process(etat_cam_q, done_signal, cam_writting, dina_1_catC, data_cam, 
+--							we, not_we_1, addr_1_catC, address_cam)
+--		begin
+--		
+--			etat_cam_d <= etat_cam_q;
+--
+--			case etat_q is
+--				when WaitingForFrame => -- Attente d'une nouvelle image à traiter.
+--					start_signal <= '0';
+--					dina_1 <= dina_1_catC;
+--					we_1(0) <= not not_we_1;
+--					addra_1 <= addr_1_catC;
+--
+--					if cam_writting = "1" then	
+--						etat_cam_d <= ReadingFrame;
+--					end if;
+--
+--				when ReadingFrame => -- Ecriture d'une nouvelle image à traiter dans ram1.
+--					start_signal <= '0';
+--					--dina_1 <= rgb2lum(data_cam);
+--					dina_1 <= (( "000" & data_cam(15 downto 11)) +
+--							data_cam(10 downto 5) +
+--							data_cam(4 downto 0));
+--					we_1 <= we;
+--					addra_1 <= address_cam;
+--
+--					if cam_writting = "0" then
+--						etat_cam_d <= Treating;
+--					end if;
+--			
+--				when Treating => -- La transformée en ondelettes est en cours.
+						 -- Le traitement se passe entre ram1 et ram2.
+						 -- Le résultat final est écrit dans ram3.
+--					start_signal <= '1';
+--					dina_1 <= dina_1_catC;
+--					we_1(0) <= not not_we_1;
+--					addra_1 <= addr_1_catC;
+
+--					if done_signal = '1' then
+--						etat_cam_d <= Synchronizing;
+--					end if;
+--
+--				when Synchronizing => -- Au cas où Camera_Capture est en train d'écrire une image,
+						      -- on attend qu'il termine.
+--					start_signal <= '0';
+--					dina_1 <= dina_1_catC;
+--					we_1(0) <= not not_we_1;
+--					addra_1 <= addr_1_catC;
+
+--					if cam_writting = "0" then
+--						etat_cam_d <= WaitingForFrame;
+--					end if;
+
+
+--			end case;
+--		end process;
+--	end generate fsm_cam;
 
 system_i: system
 	 Port map ( processing_system7_0_MIO => processing_system7_0_MIO,
@@ -471,29 +550,30 @@ ram1: ram_init
    		 addrb => addr_1_catC,
    		  doutb => doutb_1
 	);
+
 --Image a traiter est dans ram1			  
 --ram1: mem_lum_opt
 --	 Port map ( clka => CAMERA_PCLK, 
 --		  wea => we_1,
   --		  addra => addra_1,
-    --		  dina => dina_1,
-	--	  clkb => CAMERA_PCLK,
+	--	  dina => dina_1,
+	--	  clkb => clk_VGA,
    	--	  addrb => addr_1_catC,
    	--	  doutb => doutb_1
    	--	  );
 			  
 ram2: mem_lum_opt
-	 Port map ( clka => CAMERA_PCLK, 
+	 Port map ( clka => clk_VGA, 
 		  wea => we_2,
     		  addra => addr_2_catC,
     		  dina => dina_2,
-    		  clkb => CAMERA_PCLK,
+    		  clkb => clk_VGA,
    		  addrb => addr_2_catC,
    		  doutb => doutb_2
    		  );
 			  
 ram3: mem_lum_opt
-	 Port map ( clka => CAMERA_PCLK, 
+	 Port map ( clka => clk_VGA, 
 		  wea => we_3,
    		  addra => addr_3_catC,
     		  dina => dina_3,
@@ -539,7 +619,7 @@ trans_ond: Main_Trans_Ond_Opt
 		nbLevels_triosy_lz => open,
 		Dst_triosy_lz => open,
 		Src_triosy_lz => open,
-		clk => CAMERA_PCLK,  --clk_VGA,
+		clk => clk_VGA, --CAMERA_PCLK,  --clk_VGA,
 		rst => rst_VGA,
 		Src_rsc_singleport_data_in => dina_1_catC,
 		Src_rsc_singleport_addr => addr_1_catC,

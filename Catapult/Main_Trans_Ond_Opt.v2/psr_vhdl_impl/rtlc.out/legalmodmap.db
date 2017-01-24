@@ -1,9 +1,0 @@
-Main_Trans_Ond_Opt_core Main_Trans_Ond_Opt_core
-Main_Trans_Ond_Opt_core_wait_ctrl Main_Trans_Ond_Opt_core_wait_ctrl
-Main_Trans_Ond_Opt_core_fsm Main_Trans_Ond_Opt_core_fsm
-mgc_in_wire-4_3 mgc_in_wire_4_3
-mgc_bsync_vld-5_0_1 mgc_bsync_vld_5_0_1
-mgc_io_sync mgc_io_sync
-mgc_bsync_rdy-6_1_0 mgc_bsync_rdy_6_1_0
-Main_Trans_Ond_Opt Main_Trans_Ond_Opt
-#LEGALIZEDMOD_COUNTER 0

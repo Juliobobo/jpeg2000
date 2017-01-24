@@ -3,8 +3,9 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line:
 /softl2/XILINX/ise_edk_147i/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
--intstyle ise -dd _ngo -sd ../../../Catapult/Main_Trans_Ond_Opt.v2/psr_vhdl_impl
--sd ../../vhd/coregen -nt timestamp -uc
+-intstyle ise -dd _ngo -sd
+../../../dataCatapultC/Catapult_1/Ondelette.v1/psr_vhdl_impl -sd
+../../vhd/coregen -nt timestamp -uc
 /tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.ucf -bm edkBmmFile.bmm
 -p xc7z010-clg400-3 system_top.ngc system_top.ngd
 
@@ -16,6 +17,7 @@ Loading design module
 Loading design module
 "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/zybo_cam_ise/zybo_cam/system_processi
 ng_system7_0_wrapper.ngc"...
+Loading design module "../../vhd/coregen/ram_init.ngc"...
 Loading design module "../../vhd/coregen/mem_lum_opt.ngc"...
 Reading module "Main_Trans_Ond_Opt.ngo" ( "Main_Trans_Ond_Opt.ngo" unchanged
 since last run )...
@@ -61,6 +63,23 @@ WARNING::53 - File 'edkBmmFile.bmm' is empty or has no BMM content.
 
 
 Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'N132' has no driver
+WARNING:NgdBuild:452 - logical net 'N133' has no driver
+WARNING:NgdBuild:452 - logical net 'N134' has no driver
+WARNING:NgdBuild:452 - logical net 'N135' has no driver
+WARNING:NgdBuild:452 - logical net 'N136' has no driver
+WARNING:NgdBuild:452 - logical net 'N137' has no driver
+WARNING:NgdBuild:452 - logical net 'N138' has no driver
+WARNING:NgdBuild:452 - logical net 'N139' has no driver
+WARNING:NgdBuild:452 - logical net 'N140' has no driver
+WARNING:NgdBuild:452 - logical net 'N141' has no driver
+WARNING:NgdBuild:452 - logical net 'N142' has no driver
+WARNING:NgdBuild:452 - logical net 'N143' has no driver
+WARNING:NgdBuild:452 - logical net 'N144' has no driver
+WARNING:NgdBuild:452 - logical net 'N145' has no driver
+WARNING:NgdBuild:452 - logical net 'N146' has no driver
+WARNING:NgdBuild:452 - logical net 'N147' has no driver
+WARNING:NgdBuild:452 - logical net 'N148' has no driver
 WARNING:NgdBuild:452 - logical net 'N149' has no driver
 WARNING:NgdBuild:452 - logical net 'N150' has no driver
 WARNING:NgdBuild:452 - logical net 'N151' has no driver
@@ -160,10 +179,6 @@ WARNING:NgdBuild:452 - logical net 'N244' has no driver
 WARNING:NgdBuild:452 - logical net 'N245' has no driver
 WARNING:NgdBuild:452 - logical net 'N246' has no driver
 WARNING:NgdBuild:452 - logical net 'N247' has no driver
-WARNING:NgdBuild:452 - logical net 'N248' has no driver
-WARNING:NgdBuild:452 - logical net 'N249' has no driver
-WARNING:NgdBuild:452 - logical net 'N250' has no driver
-WARNING:NgdBuild:452 - logical net 'N251' has no driver
 WARNING:NgdBuild:452 - logical net 'N252' has no driver
 WARNING:NgdBuild:452 - logical net 'N253' has no driver
 WARNING:NgdBuild:452 - logical net 'N254' has no driver
@@ -176,19 +191,6 @@ WARNING:NgdBuild:452 - logical net 'N260' has no driver
 WARNING:NgdBuild:452 - logical net 'N261' has no driver
 WARNING:NgdBuild:452 - logical net 'N262' has no driver
 WARNING:NgdBuild:452 - logical net 'N263' has no driver
-WARNING:NgdBuild:452 - logical net 'N264' has no driver
-WARNING:NgdBuild:452 - logical net 'N269' has no driver
-WARNING:NgdBuild:452 - logical net 'N270' has no driver
-WARNING:NgdBuild:452 - logical net 'N271' has no driver
-WARNING:NgdBuild:452 - logical net 'N272' has no driver
-WARNING:NgdBuild:452 - logical net 'N273' has no driver
-WARNING:NgdBuild:452 - logical net 'N274' has no driver
-WARNING:NgdBuild:452 - logical net 'N275' has no driver
-WARNING:NgdBuild:452 - logical net 'N276' has no driver
-WARNING:NgdBuild:452 - logical net 'N277' has no driver
-WARNING:NgdBuild:452 - logical net 'N278' has no driver
-WARNING:NgdBuild:452 - logical net 'N279' has no driver
-WARNING:NgdBuild:452 - logical net 'N280' has no driver
 
 Partition Implementation Status
 -------------------------------
@@ -201,10 +203,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings: 128
 
-Total memory usage is 482776 kilobytes
+Total memory usage is 484496 kilobytes
 
 Writing NGD file "system_top.ngd" ...
-Total REAL time to NGDBUILD completion:  26 sec
+Total REAL time to NGDBUILD completion:  27 sec
 Total CPU time to NGDBUILD completion:   25 sec
 
 Writing NGDBUILD log file "system_top.bld"...

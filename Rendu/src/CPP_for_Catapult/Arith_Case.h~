@@ -1,0 +1,30 @@
+//
+// Created by florentin on 08/11/16.
+//
+
+#ifndef PROJET_IMPLEMENTATION_SLE_MAIN_COMP_ARITH_H
+#define PROJET_IMPLEMENTATION_SLE_MAIN_COMP_ARITH_H
+#include <ac_fixed.h>
+#include <ac_int.h>
+#include <iostream>
+#include <sstream>
+
+class Arith_Case
+{ // classe pour les cases du tableau
+	uint16 Number_Apparition;
+	ac_fixed<16, 1, false> interval_Start;
+	ac_fixed<16, 1, false> interval_End;
+
+  public:
+	Arith_Case();
+	Arith_Case(uint16 occurence);
+	void increment_Apparition();
+	uint16 getApparition();
+	void set_Start(ac_fixed<16, 1, false> start);
+	ac_fixed<16, 1, false> get_Start();
+	void set_End(ac_fixed<16, 1, false> end);
+	ac_fixed<16, 1, false> get_End();
+	void toString();
+};
+
+#endif // PROJET_IMPLEMENTATION_SLE_MAIN_COMP_ARITH_H
