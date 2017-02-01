@@ -2,7 +2,7 @@
 ##
 ##  Xilinx, Inc. 2006            www.xilinx.com
 ############################################################################
-##  File name :       /tima/smancini/Zybo/zybo_cam/zybo_simple/implementation/processing_system7_0_wrapper/processing_system7_0.xdc
+##  File name :       /tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/zybo_simple/implementation/processing_system7_0_wrapper/processing_system7_0.xdc
 ##
 ##  Details :     Constraints file
 ##                    FPGA family:       zynq

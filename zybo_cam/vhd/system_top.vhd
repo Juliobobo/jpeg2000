@@ -4,12 +4,14 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.ALL;
 
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 
 library work;
 use work.packageVGA.all;
+
 
 entity system_top is
   Port ( processing_system7_0_MIO : inout std_logic_vector(53 downto 0);
@@ -167,6 +169,7 @@ component Main_Trans_Ond_Opt is
     Src_triosy_lz : OUT STD_LOGIC;
     Dst_triosy_lz : OUT STD_LOGIC;
     Vga_triosy_lz : OUT STD_LOGIC;
+    --Main_Comp_Decomp_NoW_Main_Fonction_return_triosy_lz : OUT STD_LOGIC;
     clk : IN STD_LOGIC;
     rst : IN STD_LOGIC;
     Src_rsc_singleport_data_in : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -216,6 +219,7 @@ signal rst_VGA : STD_LOGIC;
 
 -- Signals linked to RAMs
 signal addra_1 : STD_LOGIC_VECTOR (16 downto 0);
+signal addrb_1, addrb_2, addrb_3 : STD_LOGIC_VECTOR (16 downto 0);
 signal dina_1, dina_2, dina_3, doutb_1, doutb_2, doutb_3 : STD_LOGIC_VECTOR (7 downto 0);
 signal we_1, we_2, we_3 : STD_LOGIC_VECTOR (0 downto 0);
 
@@ -238,12 +242,13 @@ signal saturate_sig : STD_LOGIC;
 -- Added for control of the level of compression
 signal nbLev_sig_q, nbLev_sig_d : STD_LOGIC_VECTOR (2 DOWNTO 0);
 signal pushed_q, pushed_d : BOOLEAN;
-type FSM_compression is (rst, switch_1, switch_2, switch_3);
+type FSM_compression is (rst, switch_inc, switch_wait, switch_3);
 signal etat_comp_q, etat_comp_d : FSM_compression;
 
 -- Added control signals for count
-signal cpt_start : STD_LOGIC;
-signal compteur : STD_LOGIC_VECTOR (11 DOWNTO 0); --on compte jusqu'à 1024 = 2*10
+signal cpt_start, cpt_stop, i_count : STD_LOGIC;
+signal cpt : STD_LOGIC_VECTOR (11 DOWNTO 0); --on compte jusqu'à 1024 = 2*10
+
 
 begin
 
@@ -252,7 +257,7 @@ begin
 	we_2(0) <= not not_we_2;
 
 	-- Linking ram3 with the VGA handling module signals
-	data_VGA <= saturate(doutb_3, saturate_sig);
+	--data_VGA <= saturate(doutb_3, saturate_sig);
 
 	-- We control whether we saturate the final picture or not with a switch
 	saturate_sig <= switch_io(3);
@@ -280,13 +285,26 @@ begin
 	compteur: process(clk_VGA)
 	begin
 		if clk_VGA'event and clk_VGA = '1' then
-			if cpt_start = '1' then
-				if compteur >= 1024 then 
-					compteur <= "0";
-					cpt_start <= '0';
+			if i_count = '1' then
+				if to_integer(unsigned (cpt)) >= 1024 then 
+					cpt <= "000000000000";
 				else
-					compteur <= compteur + 1;
+					cpt <= cpt + 1;
 				end if;
+			else
+				cpt <= "000000000000";
+			end if;
+		end if;
+	end process;
+	
+	--Start or Stop cpt	
+	gest_cpt: process(clk_VGA)
+	begin
+		if clk_VGA'event and clk_VGA = '1' then
+			if cpt_start = '1' then
+				i_count <= '1';
+			elsif cpt_stop = '1' then
+				i_count <= '0';
 			end if;
 		end if;
 	end process;
@@ -319,37 +337,42 @@ begin
 				nbLev_sig_d <= "000";
 
 				if push_io(0) = '1' then
-					etat_comp_d <= switch_1;
+					etat_comp_d <= switch_wait;
+
 				end if;
 
-			when switch_1 =>
-
+			when switch_wait =>
 				if push_io(0) = '0' then
-					etat_comp_d <= switch_2;
+					etat_comp_d <= switch_inc;
+					nbLev_sig_d <= nbLev_sig_q;
 				end if;
 
-			when switch_2 =>
-				--Compteur + signal
-				nbLev_sig_d <= nbLev_sig_q + 1;
-				cpt_start <= '1';				
+			when switch_inc =>
 
-				if nbLev_sig_q = 7 then
+				nbLev_sig_d <= nbLev_sig_q + 1;
+				
+
+--				if to_integer(unsigned (cpt))>= 10 then 
+--					cpt_stop <= '1';
+--					cpt_start <= '0';
+--	
+--				end if;
+				
+				if nbLev_sig_q = 4 then
 					etat_comp_d <= rst;
-				else
-					etat_comp_d <= switch_2;
+				else 
+					etat_comp_d <= switch_3;
+		
 				end if;
 				
-				etat_comp_d <= switch_3;
 
 			when switch_3 =>
-					
 				if push_io(0) = '1' then
-					etat_comp_d <= switch_1;
+					etat_comp_d <= switch_wait;
 				end if;
-
 		end case;	
 	end process;
-	--
+
 	-- We use the buttons of the zybo card to change the level of compression
 	--sync_nbLev: process(switch_io, push_io, rst_VGA, pushed)
 	--begin
@@ -383,7 +406,7 @@ begin
 		end if;
 	end process;
 
-	fsm: process(etat_q, done_signal, dina_1_catC, we, not_we_1, addr_1_catC)
+	fsm: process(etat_q, done_signal, dina_1_catC, not_we_1, addr_1_catC)
 	
 	begin
 		etat_d <= etat_q;
@@ -406,7 +429,6 @@ begin
 		end case;
 	end process;
 
---fsm_cam: if false generate 
 --		sync_fsm: process(clk_VGA)
 --		begin
 --			if clk_VGA'event and clk_VGA = '1' then
@@ -423,33 +445,33 @@ begin
 --		fsm: process(etat_cam_q, done_signal, cam_writting, dina_1_catC, data_cam, 
 --							we, not_we_1, addr_1_catC, address_cam)
 --		begin
---		
+		
 --			etat_cam_d <= etat_cam_q;
---
---			case etat_q is
+
+--			case etat_cam_q is
 --				when WaitingForFrame => -- Attente d'une nouvelle image à traiter.
 --					start_signal <= '0';
 --					dina_1 <= dina_1_catC;
 --					we_1(0) <= not not_we_1;
 --					addra_1 <= addr_1_catC;
---
+
 --					if cam_writting = "1" then	
 --						etat_cam_d <= ReadingFrame;
 --					end if;
---
+
 --				when ReadingFrame => -- Ecriture d'une nouvelle image à traiter dans ram1.
 --					start_signal <= '0';
---					--dina_1 <= rgb2lum(data_cam);
+					--dina_1 <= rgb2lum(data_cam);
 --					dina_1 <= (( "000" & data_cam(15 downto 11)) +
 --							data_cam(10 downto 5) +
 --							data_cam(4 downto 0));
 --					we_1 <= we;
 --					addra_1 <= address_cam;
---
+
 --					if cam_writting = "0" then
 --						etat_cam_d <= Treating;
 --					end if;
---			
+			
 --				when Treating => -- La transformée en ondelettes est en cours.
 						 -- Le traitement se passe entre ram1 et ram2.
 						 -- Le résultat final est écrit dans ram3.
@@ -461,7 +483,7 @@ begin
 --					if done_signal = '1' then
 --						etat_cam_d <= Synchronizing;
 --					end if;
---
+
 --				when Synchronizing => -- Au cas où Camera_Capture est en train d'écrire une image,
 						      -- on attend qu'il termine.
 --					start_signal <= '0';
@@ -473,10 +495,27 @@ begin
 --						etat_cam_d <= WaitingForFrame;
 --					end if;
 
-
 --			end case;
 --		end process;
---	end generate fsm_cam;
+
+
+		-- Changement de connexion Ram
+		change_VGA: process(switch_io, address_VGA, addr_1_catC)
+
+		begin
+			--Ram 1 connected to VGA
+			if (switch_io(1) = '1') then
+				addrb_1 <= address_VGA;
+				addrb_3 <= "00000000000000000";
+				data_VGA <= saturate(doutb_1, saturate_sig);
+			--Ram 3 connected to VGA
+			else
+				addrb_1 <= addr_1_catC;
+				addrb_3 <= address_VGA;
+				data_VGA <= saturate(doutb_3, saturate_sig);	
+			end if;
+		end process;
+
 
 system_i: system
 	 Port map ( processing_system7_0_MIO => processing_system7_0_MIO,
@@ -530,22 +569,23 @@ pll: clk_pll
 
 vga: VGA_generator
     Port map ( clk => clk_VGA,
-    		  btn3 => push_io(3),
-           Hsync => hs,
-           Vsync => vs,
-			  addr => address_VGA,
-			  coord => coord_VGA,
-			  activeArea => img_active,
-			  reset => rst_VGA
+	  	btn3 => push_io(3),
+           	Hsync => hs,
+           	Vsync => vs,
+	  	addr => address_VGA,
+	  	coord => coord_VGA,
+	  	activeArea => img_active,
+	  	reset => rst_VGA
 			  );
- sync_cam : process(CAMERA_PCLK)
- begin
+ 
+sync_cam : process(CAMERA_PCLK)
+begin
   if rising_edge(CAMERA_PCLK) then
 		CAMERA_DATA_q  <= CAMERA_DATA ;
 		CAMERA_HS_q <= CAMERA_HS;
 		CAMERA_VS_q <= CAMERA_VS;
   end if;
- end process sync_cam;
+end process sync_cam;
 
 capture: Camera_Capture
     Port map ( pclk => CAMERA_PCLK,
@@ -561,14 +601,14 @@ capture: Camera_Capture
 			  );
 ram1: ram_init
 	Port map ( clka => CAMERA_PCLK,
-		  ena => '1', 
-		  wea => "0",
-   		  addra => addra_1,
-    		  dina => dina_1,
-    		  clkb => clk_VGA,
-                  enb => '1',
-   		 addrb => addr_1_catC,
-   		  doutb => doutb_1
+	  			ena => '1', 
+		  		wea => "0",
+   		  		addra => addra_1,
+    		  	dina => dina_1,
+    		  	clkb => clk_VGA,
+          		enb => '1',
+   		  		addrb => addrb_1, --addr_1_catC,
+   		  		doutb => doutb_1
 	);
 
 --Image a traiter est dans ram1			  
@@ -576,7 +616,7 @@ ram1: ram_init
 --	 Port map ( clka => CAMERA_PCLK, 
 --		  wea => we_1,
   --		  addra => addra_1,
-	--	  dina => dina_1,
+	--	  dina => dina_1,clk
 	--	  clkb => clk_VGA,
    	--	  addrb => addr_1_catC,
    	--	  doutb => doutb_1
@@ -584,34 +624,23 @@ ram1: ram_init
 			  
 ram2: mem_lum_opt
 	 Port map ( clka => clk_VGA, 
-		  wea => we_2,
-    		  addra => addr_2_catC,
-    		  dina => dina_2,
-    		  clkb => clk_VGA,
-   		  addrb => addr_2_catC,
-   		  doutb => doutb_2
+		  		wea => we_2,
+    		  	addra => addr_2_catC,
+    		  	dina => dina_2,
+    		  	clkb => clk_VGA,
+   		  		addrb => addr_2_catC,
+   		  		doutb => doutb_2
    		  );
 			  
 ram3: mem_lum_opt
 	 Port map ( clka => clk_VGA, 
-		  wea => we_3,
-   		  addra => addr_3_catC,
-    		  dina => dina_3,
-    		  clkb => clk_VGA,
-   		  addrb => address_VGA,
-   		  doutb => doutb_3
+	  			wea => we_3,
+   		  		addra => addr_3_catC,
+    		  	dina => dina_3,
+    		  	clkb => clk_VGA,
+   		  		addrb => addrb_3,
+   		  		doutb => doutb_3
    		  );
---ram1: ram_init
---	Port map ( clka => CAMERA_PCLK, 
---		  ena => '0',
---		  wea => "0",
-	--	  addra => addra_1,
-	--	  dina => dina_1,
-	  --        clkb => CAMERA_PCLK,
-		--  enb => '1',
-                 -- addrb => addr_1_catC,
-   		  --doutb => doutb_1
-	--);
 
 mux: multiplexer_RGB
 	Port map ( clk => clk_VGA,
@@ -631,7 +660,7 @@ mux: multiplexer_RGB
 			  VGA_b => BLUE
 			  );
 
-trans_ond: Main_Trans_Ond_Opt
+trans_ond : Main_Trans_Ond_Opt
 	Port map ( 
 		start => start_signal,
 		done => done_signal,
@@ -639,6 +668,7 @@ trans_ond: Main_Trans_Ond_Opt
 		nbLevels_triosy_lz => open,
 		Dst_triosy_lz => open,
 		Src_triosy_lz => open,
+		--Main_Comp_Decomp_NoW_Main_Fonction_return_triosy_lz => open,
 		clk => clk_VGA, --CAMERA_PCLK,  --clk_VGA,
 		rst => rst_VGA,
 		Src_rsc_singleport_data_in => dina_1_catC,

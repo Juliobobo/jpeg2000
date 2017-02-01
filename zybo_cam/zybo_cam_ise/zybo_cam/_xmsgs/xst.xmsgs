@@ -5,61 +5,64 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 362: Assignment to <arg fmt="%s" index="1">we_1</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 409: Assignment to <arg fmt="%s" index="1">we_1</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 191: &lt;<arg fmt="%s" index="1">ram_init</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 510: <arg fmt="%s" index="1">doutb_1</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 161: &lt;<arg fmt="%s" index="1">main_trans_ond_opt</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 515: <arg fmt="%s" index="1">doutb_3</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%d" index="2">526</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">capture</arg>&gt; of block &lt;<arg fmt="%s" index="4">Camera_Capture</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">system_top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="HDLCompiler" num="89" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 194: &lt;<arg fmt="%s" index="1">ram_init</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">switch_io&lt;1:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="89" delta="old" >"/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 163: &lt;<arg fmt="%s" index="1">main_trans_ond_opt</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">526</arg>: Output port &lt;<arg fmt="%s" index="3">addr</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%d" index="2">590</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">capture</arg>&gt; of block &lt;<arg fmt="%s" index="4">Camera_Capture</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">system_top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">526</arg>: Output port &lt;<arg fmt="%s" index="3">data_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">590</arg>: Output port &lt;<arg fmt="%s" index="3">addr</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">526</arg>: Output port &lt;<arg fmt="%s" index="3">coord_x</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">590</arg>: Output port &lt;<arg fmt="%s" index="3">data_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">526</arg>: Output port &lt;<arg fmt="%s" index="3">coord_y</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">590</arg>: Output port &lt;<arg fmt="%s" index="3">coord_x</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">526</arg>: Output port &lt;<arg fmt="%s" index="3">we</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">590</arg>: Output port &lt;<arg fmt="%s" index="3">coord_y</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">526</arg>: Output port &lt;<arg fmt="%s" index="3">writting</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">590</arg>: Output port &lt;<arg fmt="%s" index="3">we</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">nbLevels_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">590</arg>: Output port &lt;<arg fmt="%s" index="3">writting</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">capture</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">Src_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">nbLevels_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">Dst_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">Src_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">Vga_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">Dst_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">Src_rsc_singleport_re</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">Vga_triosy_lz</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">Src_rsc_singleport_we</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">Src_rsc_singleport_re</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">Dst_rsc_singleport_re</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">Src_rsc_singleport_we</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">610</arg>: Output port &lt;<arg fmt="%s" index="3">Vga_rsc_singleport_re</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">Dst_rsc_singleport_re</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd</arg>&quot; line <arg fmt="%s" index="2">663</arg>: Output port &lt;<arg fmt="%s" index="3">Vga_rsc_singleport_re</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">trans_ond</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coord_x&lt;0:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -69,210 +72,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coord_y&lt;8:7&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coord_x_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">vga</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coord_y_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">vga</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coord_y_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">vga</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coord_y_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">vga</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">coord_x_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VGA_generator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Maddsub_n00811_16&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">coord_x_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VGA_generator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Maddsub_n00811_15&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">coord_x_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VGA_generator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Maddsub_n00811_14&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">coord_x_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VGA_generator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Maddsub_n00811_13&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">coord_x_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VGA_generator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Maddsub_n00811_12&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">coord_x_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VGA_generator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Maddsub_n00811_11&gt; </arg>
-</msg>
-
-<msg type="warning" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">processing_system7_0</arg>&gt; on signal &lt;<arg fmt="%s" index="2">PS_SRSTB</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="warning" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">processing_system7_0</arg>&gt; on signal &lt;<arg fmt="%s" index="2">PS_CLK</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="warning" file="Xst" num="528" delta="old" >Multi-source in Unit &lt;<arg fmt="%s" index="1">processing_system7_0</arg>&gt; on signal &lt;<arg fmt="%s" index="2">PS_PORB</arg>&gt;; this signal is connected to multiple drivers.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vga/coord_y_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_top</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vga/coord_y_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_top</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vga/coord_y_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_top</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vga/coord_x_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_top</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_31</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_30</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_29</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_28</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_20</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_19</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_18</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_17</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_16</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Hcnt_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_31</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_30</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_29</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_28</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_20</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_19</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_18</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_17</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_16</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vga/Vcnt_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">mux/data_q_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mux/data_q_6&gt; &lt;mux/data_q_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">mux/data_q_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mux/data_q_7&gt; &lt;mux/data_q_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">mux/data_q_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mux/data_q_8&gt; &lt;mux/data_q_2&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">mux/data_q_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mux/data_q_9&gt; &lt;mux/data_q_3&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">mux/data_q_15</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mux/data_q_10&gt; &lt;mux/data_q_4&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">mux/blue_q_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mux/green_q_1&gt; &lt;mux/red_q_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">mux/blue_q_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mux/green_q_2&gt; &lt;mux/red_q_1&gt; </arg>
 </msg>
 
 </messages>

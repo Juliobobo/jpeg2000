@@ -5,7 +5,7 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
@@ -103,7 +103,7 @@ Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
 ---- Other Options
-Cores Search Directories           : {"../../../dataCatapultC/Catapult_1/Ondelette.v1/psr_vhdl_impl" "../../vhd/coregen"  }
+Cores Search Directories           : {"../../../dataCatapultC/Catapult/Comp_Decomp_noW.v1/psr_vhdl_impl" "../../../dataCatapultC/Catapult_1/Ondelette.v1/psr_vhdl_impl" "../../vhd/coregen"  }
 
 =========================================================================
 
@@ -140,7 +140,9 @@ Parsing architecture <STRUCTURE> of entity <system_top>.
 =========================================================================
 
 Elaborating entity <system_top> (architecture <STRUCTURE>) from library <work>.
-WARNING:HDLCompiler:1127 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 362: Assignment to we_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 409: Assignment to we_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:92 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 510: doutb_1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 515: doutb_3 should be on the sensitivity list of the process
 
 Elaborating entity <system> (architecture <>) from library <work>.
 
@@ -149,13 +151,13 @@ Elaborating entity <clk_pll> (architecture <xilinx>) from library <work>.
 Elaborating entity <VGA_generator> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Camera_Capture> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:89 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 191: <ram_init> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 194: <ram_init> remains a black-box since it has no binding entity.
 
 Elaborating entity <mem_lum_opt> (architecture <mem_lum_opt_a>) from library <work>.
 
 Elaborating entity <multiplexer_RGB> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:89 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 161: <main_trans_ond_opt> remains a black-box since it has no binding entity.
-WARNING:Xst:2972 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 526. All outputs of instance <capture> of block <Camera_Capture> are unconnected in block <system_top>. Underlying logic will be removed.
+WARNING:HDLCompiler:89 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" Line 163: <main_trans_ond_opt> remains a black-box since it has no binding entity.
+WARNING:Xst:2972 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 590. All outputs of instance <capture> of block <Camera_Capture> are unconnected in block <system_top>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -164,29 +166,28 @@ WARNING:Xst:2972 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd
 Synthesizing Unit <system_top>.
     Related source file is "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd".
     Set property "BOX_TYPE = user_black_box" for instance <system_i>.
-WARNING:Xst:647 - Input <switch_io<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 526: Output port <addr> of the instance <capture> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 526: Output port <data_out> of the instance <capture> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 526: Output port <coord_x> of the instance <capture> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 526: Output port <coord_y> of the instance <capture> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 526: Output port <we> of the instance <capture> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 526: Output port <writting> of the instance <capture> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <nbLevels_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <Src_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <Dst_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <Vga_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <Src_rsc_singleport_re> of the instance <trans_ond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <Src_rsc_singleport_we> of the instance <trans_ond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <Dst_rsc_singleport_re> of the instance <trans_ond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 610: Output port <Vga_rsc_singleport_re> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 590: Output port <addr> of the instance <capture> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 590: Output port <data_out> of the instance <capture> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 590: Output port <coord_x> of the instance <capture> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 590: Output port <coord_y> of the instance <capture> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 590: Output port <we> of the instance <capture> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 590: Output port <writting> of the instance <capture> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <nbLevels_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <Src_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <Dst_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <Vga_triosy_lz> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <Src_rsc_singleport_re> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <Src_rsc_singleport_we> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <Dst_rsc_singleport_re> of the instance <trans_ond> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" line 663: Output port <Vga_rsc_singleport_re> of the instance <trans_ond> is unconnected or connected to loadless signal.
+    Found 2-bit register for signal <etat_comp_q>.
     Found 3-bit register for signal <nbLev_sig_q>.
     Found 1-bit register for signal <start_signal>.
-    Found 2-bit register for signal <etat_comp_q>.
     Found finite state machine <FSM_0> for signal <etat_comp_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 7                                              |
-    | Inputs             | 1                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 2                                              |
     | Outputs            | 2                                              |
     | Clock              | clk_VGA (rising_edge)                          |
     | Reset              | rst_VGA (positive)                             |
@@ -196,11 +197,11 @@ INFO:Xst:3210 - "/tp/xph3sle/xph3sle512/ProjetSLE/zybo_cam/vhd/system_top.vhd" l
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <nbLev_sig_q[2]_GND_8_o_add_7_OUT> created at line 312.
+    Found 3-bit adder for signal <nbLev_sig_q[2]_GND_8_o_add_11_OUT> created at line 352.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   4 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
+	inferred   7 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <system_top> synthesized.
 
@@ -283,9 +284,10 @@ Macro Statistics
 # Comparators                                          : 8
  32-bit comparator greater                             : 2
  32-bit comparator lessequal                           : 6
-# Multiplexers                                         : 11
+# Multiplexers                                         : 15
  1-bit 2-to-1 multiplexer                              : 1
- 16-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 3
+ 17-bit 2-to-1 multiplexer                             : 2
  3-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 2
  5-bit 2-to-1 multiplexer                              : 4
@@ -299,465 +301,4 @@ Macro Statistics
 =========================================================================
 
 Reading core <system.ngc>.
-Reading core <system_processing_system7_0_wrapper.ngc>.
-Reading core <../../vhd/coregen/ram_init.ngc>.
-Reading core <../../vhd/coregen/mem_lum_opt.ngc>.
-Launcher: Main_Trans_Ond_Opt.ngo is up to date
-Loading core <system_processing_system7_0_wrapper> for timing and area information for instance <processing_system7_0>.
-Loading core <system> for timing and area information for instance <system_i>.
-Loading core <ram_init> for timing and area information for instance <ram1>.
-Loading core <mem_lum_opt> for timing and area information for instance <ram2>.
-Loading core <mem_lum_opt> for timing and area information for instance <ram3>.
-Loading core <Main_Trans_Ond_Opt> for timing and area information for instance <trans_ond>.
-WARNING:Xst:2677 - Node <coord_x_0> of sequential type is unconnected in block <vga>.
-WARNING:Xst:2677 - Node <coord_y_0> of sequential type is unconnected in block <vga>.
-WARNING:Xst:2677 - Node <coord_y_7> of sequential type is unconnected in block <vga>.
-WARNING:Xst:2677 - Node <coord_y_8> of sequential type is unconnected in block <vga>.
-
-Synthesizing (advanced) Unit <VGA_generator>.
-The following registers are absorbed into counter <Hcnt>: 1 register on signal <Hcnt>.
-The following registers are absorbed into counter <Vcnt>: 1 register on signal <Vcnt>.
-	Multiplier <Mmult_n0081> in block <VGA_generator> and adder/subtractor <Madd_GND_42_o_PWR_12_o_add_8_OUT> in block <VGA_generator> are combined into a MAC<Maddsub_n0081>.
-	The following registers are also absorbed by the MAC: <addr> in block <VGA_generator>.
-Unit <VGA_generator> synthesized (advanced).
-
-Synthesizing (advanced) Unit <system_top>.
-The following registers are absorbed into counter <nbLev_sig_q>: 1 register on signal <nbLev_sig_q>.
-Unit <system_top> synthesized (advanced).
-
-=========================================================================
-Advanced HDL Synthesis Report
-
-Macro Statistics
-# MACs                                                 : 1
- 9x8-to-17-bit MAC                                     : 1
-# Adders/Subtractors                                   : 2
- 32-bit subtractor                                     : 2
-# Counters                                             : 3
- 3-bit up counter                                      : 1
- 32-bit up counter                                     : 2
-# Registers                                            : 58
- Flip-Flops                                            : 58
-# Comparators                                          : 8
- 32-bit comparator greater                             : 2
- 32-bit comparator lessequal                           : 6
-# Multiplexers                                         : 10
- 1-bit 2-to-1 multiplexer                              : 1
- 16-bit 2-to-1 multiplexer                             : 1
- 32-bit 2-to-1 multiplexer                             : 2
- 5-bit 2-to-1 multiplexer                              : 4
- 6-bit 2-to-1 multiplexer                              : 2
-# FSMs                                                 : 1
-
-=========================================================================
-
-=========================================================================
-*                         Low Level Synthesis                           *
-=========================================================================
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <etat_comp_q[1:2]> with user encoding.
-----------------------
- State    | Encoding
-----------------------
- rst      | 00
- switch_1 | 01
- switch_2 | 10
- switch_3 | 11
-----------------------
-INFO:Xst:2261 - The FF/Latch <coord_x_1> in Unit <VGA_generator> is equivalent to the following FF/Latch, which will be removed : <Maddsub_n00811_16> 
-INFO:Xst:2261 - The FF/Latch <coord_x_2> in Unit <VGA_generator> is equivalent to the following FF/Latch, which will be removed : <Maddsub_n00811_15> 
-INFO:Xst:2261 - The FF/Latch <coord_x_3> in Unit <VGA_generator> is equivalent to the following FF/Latch, which will be removed : <Maddsub_n00811_14> 
-INFO:Xst:2261 - The FF/Latch <coord_x_4> in Unit <VGA_generator> is equivalent to the following FF/Latch, which will be removed : <Maddsub_n00811_13> 
-INFO:Xst:2261 - The FF/Latch <coord_x_5> in Unit <VGA_generator> is equivalent to the following FF/Latch, which will be removed : <Maddsub_n00811_12> 
-INFO:Xst:2261 - The FF/Latch <coord_x_6> in Unit <VGA_generator> is equivalent to the following FF/Latch, which will be removed : <Maddsub_n00811_11> 
-
-WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_SRSTB>; this signal is connected to multiple drivers.
-Drivers are: 
-   Primary input port <processing_system7_0_PS_SRSTB>
-   Output port PS7:PSSRSTB of instance <system_i/processing_system7_0/processing_system7_0/PS7_i>
-
-WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_CLK>; this signal is connected to multiple drivers.
-Drivers are: 
-   Primary input port <processing_system7_0_PS_CLK>
-   Output port PS7:PSCLK of instance <system_i/processing_system7_0/processing_system7_0/PS7_i>
-
-WARNING:Xst:528 - Multi-source in Unit <processing_system7_0> on signal <PS_PORB>; this signal is connected to multiple drivers.
-Drivers are: 
-   Primary input port <processing_system7_0_PS_PORB>
-   Output port PS7:PSPORB of instance <system_i/processing_system7_0/processing_system7_0/PS7_i>
-
-Optimizing unit <system_top> ...
-
-Optimizing unit <multiplexer_RGB> ...
-
-Optimizing unit <VGA_generator> ...
-WARNING:Xst:2677 - Node <vga/coord_y_8> of sequential type is unconnected in block <system_top>.
-WARNING:Xst:2677 - Node <vga/coord_y_7> of sequential type is unconnected in block <system_top>.
-WARNING:Xst:2677 - Node <vga/coord_y_0> of sequential type is unconnected in block <system_top>.
-WARNING:Xst:2677 - Node <vga/coord_x_0> of sequential type is unconnected in block <system_top>.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_31> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_30> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_29> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_28> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_27> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_26> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_25> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_24> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_23> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_22> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_21> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_20> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_19> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_18> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_17> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_16> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_15> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_14> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_13> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_12> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_11> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Hcnt_10> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_31> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_30> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_29> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_28> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_27> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_26> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_25> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_24> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_23> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_22> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_21> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_20> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_19> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_18> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_17> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_16> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_15> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_14> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_13> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_12> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_11> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <vga/Vcnt_10> has a constant value of 0 in block <system_top>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <mux/data_q_11> in Unit <system_top> is equivalent to the following 2 FFs/Latches, which will be removed : <mux/data_q_6> <mux/data_q_0> 
-INFO:Xst:2261 - The FF/Latch <mux/data_q_12> in Unit <system_top> is equivalent to the following 2 FFs/Latches, which will be removed : <mux/data_q_7> <mux/data_q_1> 
-INFO:Xst:2261 - The FF/Latch <mux/data_q_13> in Unit <system_top> is equivalent to the following 2 FFs/Latches, which will be removed : <mux/data_q_8> <mux/data_q_2> 
-INFO:Xst:2261 - The FF/Latch <mux/data_q_14> in Unit <system_top> is equivalent to the following 2 FFs/Latches, which will be removed : <mux/data_q_9> <mux/data_q_3> 
-INFO:Xst:2261 - The FF/Latch <mux/data_q_15> in Unit <system_top> is equivalent to the following 2 FFs/Latches, which will be removed : <mux/data_q_10> <mux/data_q_4> 
-INFO:Xst:2261 - The FF/Latch <mux/blue_q_0> in Unit <system_top> is equivalent to the following 2 FFs/Latches, which will be removed : <mux/green_q_1> <mux/red_q_0> 
-INFO:Xst:2261 - The FF/Latch <mux/blue_q_1> in Unit <system_top> is equivalent to the following 2 FFs/Latches, which will be removed : <mux/green_q_2> <mux/red_q_1> 
-
-Mapping all equations...
-Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block system_top, actual ratio is 3.
-
-Final Macro Processing ...
-
-=========================================================================
-Final Register Report
-
-Macro Statistics
-# Registers                                            : 76
- Flip-Flops                                            : 76
-
-=========================================================================
-
-=========================================================================
-*                           Partition Report                            *
-=========================================================================
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-=========================================================================
-*                            Design Summary                             *
-=========================================================================
-
-Top Level Output File Name         : system_top.ngc
-
-Primitive and Black Box Usage:
-------------------------------
-# BELS                             : 1835
-#      GND                         : 9
-#      INV                         : 118
-#      LUT1                        : 25
-#      LUT2                        : 117
-#      LUT3                        : 181
-#      LUT4                        : 188
-#      LUT5                        : 264
-#      LUT6                        : 399
-#      MUXCY                       : 302
-#      MUXF7                       : 8
-#      VCC                         : 6
-#      XORCY                       : 218
-# FlipFlops/Latches                : 525
-#      FD                          : 38
-#      FDE                         : 16
-#      FDR                         : 13
-#      FDRE                        : 455
-#      FDSE                        : 3
-# RAMS                             : 76
-#      RAMB18E1                    : 38
-#      RAMB36E1                    : 38
-# Clock Buffers                    : 5
-#      BUFG                        : 4
-#      BUFGP                       : 1
-# IO Buffers                       : 36
-#      IBUF                        : 10
-#      IBUFG                       : 1
-#      IOBUF                       : 2
-#      OBUF                        : 23
-# Others                           : 2
-#      MMCME2_ADV                  : 1
-#      PS7                         : 1
-
-Device utilization summary:
----------------------------
-
-Selected Device : 7z010clg400-3 
-
-
-Slice Logic Utilization: 
- Number of Slice Registers:             525  out of  35200     1%  
- Number of Slice LUTs:                 1292  out of  17600     7%  
-    Number used as Logic:              1292  out of  17600     7%  
-
-Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1622
-   Number with an unused Flip Flop:    1097  out of   1622    67%  
-   Number with an unused LUT:           330  out of   1622    20%  
-   Number of fully used LUT-FF pairs:   195  out of   1622    12%  
-   Number of unique control sets:        37
-
-IO Utilization: 
- Number of IOs:                         175
- Number of bonded IOBs:                  37  out of    100    37%  
-
-Specific Feature Utilization:
- Number of Block RAM/FIFO:               57  out of     60    95%  
-    Number using Block RAM only:         57
- Number of BUFG/BUFGCTRLs:                5  out of     32    15%  
-
----------------------------
-Partition Resource Summary:
----------------------------
-
-  No Partitions were found in this design.
-
----------------------------
-
-
-=========================================================================
-Timing Report
-
-NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
-      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
-      GENERATED AFTER PLACE-and-ROUTE.
-
-Clock Information:
-------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-pll/clkout0                        | BUFG                   | 601   |
-CAMERA_PCLK                        | BUFGP                  | 38    |
------------------------------------+------------------------+-------+
-
-Asynchronous Control Signals Information:
-----------------------------------------
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------+
-Control Signal                                                                                                                                                                                                                                                                  | Buffer(FF name)                                                                                                                                   | Load  |
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------+
-ram2/N1(ram2/XST_GND:G)                                                                                                                                                                                                                                                         | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram)     | 22    |
-ram3/N1(ram3/XST_GND:G)                                                                                                                                                                                                                                                         | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B) | 22    |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)| NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T)| 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)| NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T)| 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/cascadelata_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/cascadelatb_tmp(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)| NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T)| 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)| NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T)| 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/cascadelata_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTA)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
-ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/cascadelatb_tmp(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_B:CASCADEOUTB)  | NONE(ram3/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.CASCADED_PRIM36.ram_T) | 1     |
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------+
-
-Timing Summary:
----------------
-Speed Grade: -3
-
-   Minimum period: 7.255ns (Maximum Frequency: 137.830MHz)
-   Minimum input arrival time before clock: 1.023ns
-   Maximum output required time after clock: 0.530ns
-   Maximum combinational path delay: 0.612ns
-
-Timing Details:
----------------
-All values displayed in nanoseconds (ns)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'pll/clkout0'
-  Clock period: 7.255ns (frequency: 137.830MHz)
-  Total number of paths / destination ports: 2390422 / 1947
--------------------------------------------------------------------------
-Delay:               7.255ns (Levels of Logic = 21)
-  Source:            trans_ond/Main_Trans_Ond_Opt_core_inst/reg_Trans_Ond_1_y_1_sva(0) (FF)
-  Destination:       ram1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/v6_init.ram/NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram (RAM)
-  Source Clock:      pll/clkout0 rising
-  Destination Clock: pll/clkout0 rising
-
-  Data Path: trans_ond/Main_Trans_Ond_Opt_core_inst/reg_Trans_Ond_1_y_1_sva(0) to ram1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[28].ram.r/v6_init.ram/NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDRE:C->Q            17   0.232   0.418  reg_Trans_Ond_1_y_1_sva(0) (nx39517z7)
-     LUT2:I0->O            1   0.043   0.000  ix57254z1320 (nx57254z1)
-     MUXCY:S->O            1   0.230   0.000  passe_y_1_acc_45_itm_add7_27_muxcy_0 (nx57253z1)
-     MUXCY:CI->O           1   0.012   0.000  passe_y_1_acc_45_itm_add7_27_muxcy_1 (nx51877z1)
-     MUXCY:CI->O           1   0.012   0.000  passe_y_1_acc_45_itm_add7_27_muxcy_2 (nx51876z1)
-     MUXCY:CI->O           1   0.012   0.000  passe_y_1_acc_45_itm_add7_27_muxcy_3 (nx51875z1)
-     XORCY:CI->O           2   0.251   0.555  passe_y_1_acc_45_itm_add7_27_xorcy_4 (passe_y_1_acc_45_itm(5))
-     LUT6:I0->O            2   0.043   0.432  ix28310z34082 (nx28310z3)
-     LUT3:I0->O            3   0.043   0.552  ix28311z1358 (nx28311z3)
-     LUT5:I0->O            1   0.043   0.542  ix28311z48294 (nx28311z2)
-     LUT5:I0->O            1   0.043   0.000  ix28311z23498 (nx28311z4)
-     MUXCY:S->O            1   0.230   0.000  z_out_15_add7_29_muxcy_4 (nx28312z1)
-     MUXCY:CI->O           1   0.013   0.000  z_out_15_add7_29_muxcy_5 (nx28313z1)
-     XORCY:CI->O           4   0.251   0.303  z_out_15_add7_29_xorcy_6 (z_out_15(6))
-     begin scope: 'trans_ond/Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst:p_nbus_Main_Trans_Ond_Opt_core_inst_z_out_15(6)'
-     LUT4:I3->O            1   0.043   0.542  ix41011z6276 (nx41011z3)
-     LUT6:I1->O            1   0.043   0.542  ix41011z50659 (nx41011z1)
-     LUT5:I0->O            7   0.043   0.456  ix41011z1319 (p_nbus_Src_rsc_singleport_addr(15))
-     end scope: 'trans_ond/Main_Trans_Ond_Opt_core_inst/Main_Trans_Ond_Opt_core_fsm_inst:p_nbus_Src_rsc_singleport_addr(15)'
-     end scope: 'trans_ond/Main_Trans_Ond_Opt_core_inst:p_nbus_Src_rsc_singleport_addr(15)'
-     end scope: 'trans_ond:Src_rsc_singleport_addr<15>'
-     begin scope: 'ram1:addrb<15>'
-     LUT3:I0->O           16   0.043   0.611  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_b.bindec_inst_b/Mmux_ENOUT<0>111 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_b.bindec_inst_b/Mmux_ENOUT<0>11)
-     LUT5:I0->O            1   0.043   0.279  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_b.bindec_inst_b/Mmux_ENOUT<5>11 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/enb_array<5>)
-     RAMB18E1:ENBWREN          0.348          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/v6_init.ram/NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram
-    ----------------------------------------
-    Total                      7.255ns (2.022ns logic, 5.233ns route)
-                                       (27.9% logic, 72.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'pll/clkout0'
-  Total number of paths / destination ports: 90 / 33
--------------------------------------------------------------------------
-Offset:              1.023ns (Levels of Logic = 2)
-  Source:            push_io<1> (PAD)
-  Destination:       mux/blue_q_4 (FF)
-  Destination Clock: pll/clkout0 rising
-
-  Data Path: push_io<1> to mux/blue_q_4
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            10   0.000   0.498  push_io_1_IBUF (push_io_1_IBUF)
-     LUT4:I0->O           12   0.043   0.330  mux/_n0063_inv1 (mux/_n0063_inv)
-     FDRE:CE                   0.153          mux/red_q_2
-    ----------------------------------------
-    Total                      1.023ns (0.196ns logic, 0.827ns route)
-                                       (19.2% logic, 80.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'pll/clkout0'
-  Total number of paths / destination ports: 21 / 21
--------------------------------------------------------------------------
-Offset:              0.530ns (Levels of Logic = 1)
-  Source:            nbLev_sig_q_0 (FF)
-  Destination:       led_io<1> (PAD)
-  Source Clock:      pll/clkout0 rising
-
-  Data Path: nbLev_sig_q_0 to led_io<1>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDRE:C->Q             5   0.232   0.298  nbLev_sig_q_0 (nbLev_sig_q_0)
-     OBUF:I->O                 0.000          led_io_1_OBUF (led_io<1>)
-    ----------------------------------------
-    Total                      0.530ns (0.232ns logic, 0.298ns route)
-                                       (43.8% logic, 56.2% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 134 / 132
--------------------------------------------------------------------------
-Delay:               0.612ns (Levels of Logic = 3)
-  Source:            system_i/processing_system7_0/processing_system7_0/PS7_i:EMIOI2C0SDATN (PAD)
-  Destination:       processing_system7_0_I2C0_SDA (PAD)
-
-  Data Path: system_i/processing_system7_0/processing_system7_0/PS7_i:EMIOI2C0SDATN to processing_system7_0_I2C0_SDA
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    PS7:EMIOI2C0SDATN      1   0.000   0.279  processing_system7_0/PS7_i (processing_system7_0/I2C0_SDA_T_n)
-     INV:I->O              1   0.053   0.279  processing_system7_0/I2C0_SDA_T1_INV_0 (I2C0_SDA_T)
-     end scope: 'system_i/processing_system7_0:I2C0_SDA_T'
-     IOBUF:T->IO               0.000          iobuf_0 (processing_system7_0_I2C0_SDA)
-     end scope: 'system_i:processing_system7_0_I2C0_SDA'
-    ----------------------------------------
-    Total                      0.612ns (0.053ns logic, 0.559ns route)
-                                       (8.7% logic, 91.3% route)
-
-=========================================================================
-
-Cross Clock Domains Report:
---------------------------
-
-Clock to Setup on destination clock CAMERA_PCLK
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-pll/clkout0    |    7.255|         |         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock pll/clkout0
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-pll/clkout0    |    7.255|         |         |         |
----------------+---------+---------+---------+---------+
-
-=========================================================================
-
-
-Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 25.39 secs
- 
---> 
-
-
-Total memory usage is 544508 kilobytes
-
-Number of errors   :    0 (   0 filtered)
-Number of warnings :   63 (   0 filtered)
-Number of infos    :   27 (   0 filtered)
-
+EXCEPTION:Xdm:ModelImp.c:853:$Id: ModelImp.c,v 1.28 2009/06/12 19:55:28 jdl Exp $ - Xdm_Exception::InvalidFileFormat format=binary file='system.ngc'
